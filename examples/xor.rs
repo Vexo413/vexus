@@ -1,4 +1,4 @@
-use neural_network::NeuralNetwork;
+use vexus::NeuralNetwork;
 
 fn main() {
     // Create a neural network with 2 inputs, one hidden layer of 4 neurons, and 1 output

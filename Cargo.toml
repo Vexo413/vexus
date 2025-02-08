@@ -1,13 +1,13 @@
 [package]
-name = "neural_network"
+name = "vexus"
 version = "1.0.0"
 edition = "2021"
-description = "A neural network created and trainer struct to make your own AI models."
+description = "A neural network creater and trainer struct to make your own AI models."
 license = "MIT"
 authors = ["Vexar413"]
 readme = "README.md"
 repository = "https://github.com/Vexo413/neural_network"
-keywords = ["ai", "brain", "neural", "network"]
+keywords = ["ai", "brain", "neural", "network", "neural_network"]
 
 [dependencies]
 rand = "0.9.0"

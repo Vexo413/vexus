@@ -1,5 +1,5 @@
-use neural_network::NeuralNetwork;
 use std::f32::consts::PI;
+use vexus::NeuralNetwork;
 
 fn normalize(x: f32, min: f32, max: f32) -> f32 {
     (x - min) / (max - min)
