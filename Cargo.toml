@@ -1,6 +1,6 @@
 [package]
 name = "vexus"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 description = "A neural network builder and trainer struct to make your own AI models."
 license = "MIT"
