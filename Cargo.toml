@@ -2,9 +2,11 @@
 name = "neural_network"
 version = "0.1.0"
 edition = "2021"
-description = "A simple neural network implementation in Rust"
+description = "A neural network created and trainer struct to make your own AI models."
 license = "MIT"
+authors = ["Vexar413"]
+readme = "README.md"
+repository = "https://github.com/Vexo413/neural_network"
 
 [dependencies]
-crossterm = "0.28.1"
 rand = "0.9.0"
