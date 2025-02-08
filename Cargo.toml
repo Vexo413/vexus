@@ -2,7 +2,7 @@
 name = "vexus"
 version = "1.0.0"
 edition = "2021"
-description = "A neural network creater and trainer struct to make your own AI models."
+description = "A neural network builder and trainer struct to make your own AI models."
 license = "MIT"
 authors = ["Vexar413"]
 readme = "README.md"
