@@ -8,6 +8,7 @@ A neural network builder and trainer to make your own AI models.
 - Backpropagation learning
 - Configurable layer sizes
 - Sigmoid activation function
+- Save/load functionality
 
 ## Installation
 
@@ -71,7 +72,7 @@ cargo run --example sine_waves
   - [ ] ReLU
   - [ ] Tanh
   - [x] Sigmoid
-- [ ] Add save/load functionality
+- [X] Add save/load functionality
 - [ ] Add documentation
 - [ ] Add more examples
 
