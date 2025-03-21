@@ -1,6 +1,10 @@
 use rand::distr::{Distribution, Uniform};
 use rand::rng;
+use serde::{Deserialize, Serialize};
+use std::fs::File;
+use std::io::{self, BufReader, BufWriter};
 
+#[derive(Serialize, Deserialize)]
 pub struct NeuralNetwork {
     weights: Vec<Vec<Vec<f32>>>,  // Layer -> Input -> Output
     biases: Vec<Vec<f32>>,        // Layer -> Output
@@ -54,6 +58,19 @@ impl NeuralNetwork {
             layer_sizes,
             learning_rate,
         }
+    }
+    pub fn from_file(path: &str) -> io::Result<Self> {
+        let file = File::open(path)?;
+        let reader = BufReader::new(file);
+        let nn = serde_json::from_reader(reader)?;
+        Ok(nn)
+    }
+
+    pub fn save_to_file(&self, path: &str) -> io::Result<()> {
+        let file = File::create(path)?;
+        let writer = BufWriter::new(file);
+        serde_json::to_writer(writer, &self)?;
+        Ok(())
     }
 
     pub fn forward(&mut self, inputs: Vec<f32>) {
