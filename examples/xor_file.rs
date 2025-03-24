@@ -1,4 +1,3 @@
-use std::fs;
 use vexus::NeuralNetwork;
 
 fn main() {

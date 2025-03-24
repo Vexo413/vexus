@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::{self, BufReader, BufWriter};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct NeuralNetwork {
     weights: Vec<Vec<Vec<f32>>>,  // Layer -> Input -> Output
     biases: Vec<Vec<f32>>,        // Layer -> Output
@@ -131,6 +131,26 @@ impl NeuralNetwork {
                         * self.layer_inputs[layer][i];
                 }
                 self.biases[layer][j] += self.learning_rate * self.layer_errors[layer][j];
+            }
+        }
+    }
+    pub fn mutate(&mut self, mutation_rate: f32) {
+        let mut rng = rng();
+        let between = Uniform::try_from(-mutation_rate..mutation_rate).unwrap();
+
+        // Mutate weights
+        for layer in &mut self.weights {
+            for neuron in layer {
+                for weight in neuron {
+                    *weight += between.sample(&mut rng);
+                }
+            }
+        }
+
+        // Mutate biases
+        for layer in &mut self.biases {
+            for bias in layer {
+                *bias += between.sample(&mut rng);
             }
         }
     }

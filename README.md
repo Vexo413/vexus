@@ -67,14 +67,14 @@ cargo run --example sine_waves
 
 ## Todo
 
-- [ ] Add mutation
+- [X] Add mutation
 - [ ] Implement different activation functions
   - [ ] ReLU
   - [ ] Tanh
   - [x] Sigmoid
 - [X] Add save/load functionality
 - [ ] Add documentation
-- [ ] Add more examples
+- [X] Add more examples
 
 
 ## License
